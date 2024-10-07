@@ -11,7 +11,11 @@ import com.example.soal_uts_bug_fixing.databinding.ActivityFormBinding
 
 class FormActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFormBinding
-    companion object{
+    companion object { //belum ada companion objectnya jadi variable tidak diketahui
+        const val EXTRA_NAMA = "extra_nama"
+        const val EXTRA_IDENTITAS = "extra_identitas"
+        const val EXTRA_GENDER = "extra_gender"
+        const val EXTRA_KELUHAN = "extra_keluhan"
     }
 
     private lateinit var gendersArray : Array<String>
@@ -21,8 +25,7 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        gendersArray = resources.getStringArray()
-        // Gunakan array yang sudah di buat di folder values
+        gendersArray = resources.getStringArray(R.array.gender_descriptions) // array belum dipanggil
 
 
         with(binding){

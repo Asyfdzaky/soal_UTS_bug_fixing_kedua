@@ -27,7 +27,6 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
     private lateinit var binding: ActivityAppointmentBinding
 
     companion object{
-        const val EXTRA_NAMA  = "extra_nama"
         const val EXTRA_TELEFON = "extra_phone"
         const val EXTRA_ALAMAT = "extra_alamat"
         const val EXTRA_TIPE = "extra_tipe"
@@ -51,17 +50,17 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
         with(binding){
 
             kalenderTxt.setOnClickListener {
-                val datePicker = DatePicker()
+                val datePicker = DatePicker()      //salah pemanggilan button
                 datePicker.show(supportFragmentManager, "datePicker")
             }
 
             timerTxt.setOnClickListener {
-                val timePicker = TimePicker()
+                val timePicker = TimePicker() //salah pemanggilan button
                 timePicker.show(supportFragmentManager, "timePicker")
             }
 
             submitBtn.setOnClickListener {
-                if(fieldNotEmpty()){
+                if(fieldNotEmpty()){ //salah pemanggilan button
                     val dialog = DialogExit()
                     //
                 }else{
@@ -166,7 +165,7 @@ class DatePicker : DialogFragment() {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)  //datepicker belum dikasih  variable calender year month day
 
         return DatePickerDialog(
             requireActivity(),
@@ -175,6 +174,7 @@ class DatePicker : DialogFragment() {
             month,
             day
         )
+
     }
 }
 
