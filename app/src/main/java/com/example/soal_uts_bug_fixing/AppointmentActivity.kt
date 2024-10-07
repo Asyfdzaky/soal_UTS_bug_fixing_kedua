@@ -62,7 +62,7 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
             submitBtn.setOnClickListener {
                 if(fieldNotEmpty()){ //salah pemanggilan button
                     val dialog = DialogExit()
-                    //
+                    dialog.show(supportFragmentManager, "DialogExit")
                 }else{
                     Toast.makeText(this@AppointmentActivity, "MASIH ADA KOLOM YANG KOSONG", Toast.LENGTH_SHORT).show()
                 }
